@@ -77,13 +77,8 @@ body{
 
 }
 
-.famousrestaurantcards{
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-.famousrestauranttitle{
+
+.famoustitle{
     background-color: black;
     color: white;
     width: 86%;
@@ -92,19 +87,11 @@ body{
     /* margin: 0 auto; */
 
 }
-.famousfoodcards{
+.famouscards{
     margin-top: 60px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-}
-.famousfoodtitle{
-    background-color: black;
-    color: white;
-    width: 86%;
-    margin-top: 40px;
-    margin-left: 7%;
-/* margin: 0 auto; */
 }
 .dishcardmain{
     background-color: lightpink;
@@ -113,6 +100,9 @@ body{
     justify-content: space-around;
     flex-wrap: wrap; 
 }
+
+
+
 
 
 
@@ -330,12 +320,13 @@ position: relative;
         margin: 0 auto;
         height: 100%;
         width: 90%;
-        padding: 40px 40px 40px 40px ;
+        padding: 20px ;
         border-radius: 30%;
     }
     .card img{
-        width:16rem;
-        height: 15rem;
+        margin: 0 auto;
+        width:17rem;
+        height: 14rem;
         padding: 10px;
         border: 1px solid;
         border-radius: 15%;   
@@ -343,8 +334,39 @@ position: relative;
     }
     .card{
         margin: 15px;
+        display: flex;
+        justify-content: center;
         border: none;
     
     }
-   
+    .famoustitle{
+        background-color: black;
+        color: white;
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 5%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid white;
+        border-radius: 30%;
+
+    }
+    .famouscards{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .card-body p {
+        margin: 10px;
+    }
+    .card-body a {
+       width: 100%;
+       margin: 0 auto;
+    }
+    .card-body h5 {
+        width: 60%;
+        margin: 0 auto;    
+    }
   }
