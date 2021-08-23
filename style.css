@@ -355,8 +355,8 @@ position: relative;
         background-color: black;
         color: white;
         width: 100%;
-        margin-top: 20px;
-        font-size: medium;
+        margin-top: 40px;
+        font-size: x-large;
         /* margin-left: 5%; */
         padding: 10px;
         border: 1px solid white;
@@ -380,5 +380,16 @@ position: relative;
         text-align: center;
         width: 100%;
         /* margin: 0 auto;     */
+    }
+
+
+    .footer-dark {
+
+        height: 700px;
+        margin-top: 120px;
+        padding:10px 0;
+        color:white;
+        background-color:black;
+        
     }
   }
