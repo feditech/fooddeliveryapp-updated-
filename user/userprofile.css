@@ -1,0 +1,38 @@
+.mt-20 {
+    margin-top: 20px;
+}
+
+.profile-div{
+position: relative;
+}
+.profilepic {
+    border: 4px solid grey;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+   
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+.profileloader{
+    margin: 0 auto;
+}
+
+.camerabtn{
+    position: absolute; 
+    right: 48%;
+    background-color:transparent;
+    bottom: 0;
+    outline: none;
+    z-index: 122222;
+}
+.camerabtn:hover{
+    color: white;
+    right: 47%;
+    font-size: x-large;
+}

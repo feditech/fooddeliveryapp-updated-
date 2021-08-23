@@ -20,7 +20,7 @@ firebase.database().ref(`restaurant`)
                           <div class="card-body">
                             <h5   class="card-title">${data.val().Restaurantname}</h5>
                             <h6  >City: ${data.val().City} </h6>
-                            <h6>Country:dd ${data.val().Country} </h6>
+                            <h6>Country: ${data.val().Country} </h6>
                             <h2><button onclick="exploreRestaurant('${uid}')" width=100% type="button" class="btn btn-primary btn-lg">Explore Restaurant</button></h2>
                             </div>
                         </div>`   
