@@ -37,11 +37,12 @@ body{
 }
 .bannerdescription{
     box-shadow: royalblue;
-    margin:100px 30px;
+    /* margin:100px 30px; */
 }
 
 .bannerdescription p {
-   padding: 70px 0px 50px 50px;
+    width: 100%;
+   padding: 80px 40px ;
 }
 
  .bannerimage{
