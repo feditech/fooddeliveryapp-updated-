@@ -74,7 +74,7 @@ body{
     border: 1px solid;
     border-radius: 20%;
     
-    
+
 }
 
 .famousrestaurantcards{
@@ -305,7 +305,7 @@ position: relative;
 @media only screen and (max-width: 350px) {
   
     .banner{  
-        margin: 20px;
+        /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
     
@@ -320,17 +320,31 @@ position: relative;
  }
     .bannerimage{
         /* margin: 0 auto; */
-        width: 80%;
+        width: 95%;
         display: flex;
         justify-content: space-around;
+        margin: 10px;
     }
     .bannerimage img{
         /* border: 2px solid; */
         margin: 0 auto;
         height: 100%;
-        width: 80%;
+        width: 90%;
         padding: 40px 40px 40px 40px ;
         border-radius: 30%;
+    }
+    .card img{
+        width:16rem;
+        height: 15rem;
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 15%;   
+        
+    }
+    .card{
+        margin: 15px;
+        border: none;
+    
     }
    
   }
