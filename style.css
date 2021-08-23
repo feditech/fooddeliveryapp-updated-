@@ -139,7 +139,7 @@ position: relative;
 
 
 
-/* Footer styling
+
 .footer-div{
     background-color: rgb(238, 237, 237);
     padding: 30px 0;
@@ -288,6 +288,10 @@ position: relative;
         /* border: 2px solid; */
         margin:0 auto;
     }
+    
+.bannerdescription p {
+    padding: 40px 0px 30px 30px;
+ }
     /* .bannerimage{
         margin: 0 auto;
     } */
@@ -314,11 +318,8 @@ position: relative;
 
   
 @media only screen and (max-width: 350px) {
-    body {
-      background-color: lightcyan;
-    }
-    .banner{
-    
+  
+    .banner{  
         margin: 20px;
         display: flex;
         flex-wrap: wrap;
@@ -328,6 +329,10 @@ position: relative;
         /* border: 2px solid; */
         margin:0 auto;
     }
+    
+.bannerdescription p {
+    padding: 40px 0px 30px 30px;
+ }
     .bannerimage{
         /* margin: 0 auto; */
         width: 80%;
