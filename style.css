@@ -337,14 +337,14 @@ position: relative;
     .famoustitle{
         background-color: black;
         color: white;
-        width: 90%;
+        width: 100%;
         margin-top: 20px;
-        margin-left: 5%;
+        /* margin-left: 5%; */
         padding: 10px;
         display: flex;
         justify-content: center;
         border: 1px solid white;
-        border-radius: 30%;
+        /* border-radius: 30%; */
 
     }
     .famouscards{
