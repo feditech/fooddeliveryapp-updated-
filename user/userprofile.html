@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <div>
+            <a href="../index.html">
+         <img width="60px" height="50px" src="https://www.pngitem.com/pimgs/m/249-2490135_tablespoon-fork-icon-food-logo-icon-restaurant-hd.png" alt="" width="30" height="24">
+     </a>
+ <a class="navbar-brand" href="../index.html">  FD Food</a>
+        </div>
+            <div>
+                <button onclick="" class="btn btn-outline-success" type="submit">My orders</button>
+                <button onclick='window.location ="allrestaurants.html"'  class="btn btn-outline-success btn1" type="submit">All Restaurants</button>
+                <button onclick="logout()" class="btn btn-outline-success btn1" type="submit">Logout</button>
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container" id="profiledata">
+        <div class="row justify-content-center mt-20">
+            <div class="col-6 justify-content-center text-center">
+                <h2>User Profile</h2>
+                <div class="profile-div">
+                    <img class="profilepic" id="defaultDp" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                        alt="">
+                       
+                    </div>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> <i  class="fa fa-camera" aria-hidden="true"></i></button>
+                <div class="mt-20">
+                    <h2 id="username"></h2>
+                    <span id="email"></span>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Example file input</label>
+                  <input type="file" class="form-control-file" id="profilepic">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button id="closebtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button onclick="updateProfile()" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <a href="products.html"><button>Goto products page</button></a> -->
+    
+    <!-- <div id="loader" class="spinner-border profileloader" role="status" style="display: none;"> -->
+<!-- <button onclick="profile()"> profile </button> -->
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB3WykG4CbGJm19A1uMbkXt9Yg8SCs927A",
+    authDomain: "javascriptpractice-c8dde.firebaseapp.com",
+    databaseURL: "https://javascriptpractice-c8dde-default-rtdb.firebaseio.com",
+    projectId: "javascriptpractice-c8dde",
+    storageBucket: "javascriptpractice-c8dde.appspot.com",
+    messagingSenderId: "139519736241",
+    appId: "1:139519736241:web:fa4c81cab80df69f89e590",
+    measurementId: "G-KQYJQLMMXQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.7.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="userprofile.js"></script>
+
+
+</body >
+
+</html>

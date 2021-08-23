@@ -1,0 +1,346 @@
+body{
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar{
+    color: white;
+}
+
+.btn1:hover{
+    background-color: black;
+    color: white;
+}
+.btn1{
+    background-color: white;
+    color: black;
+}
+
+
+.carousel-caption{
+    display: inline;
+}
+.mainbanner{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.banner{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-image: url("./images/mainpage/s2.jpg");
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+.bannerdescription{
+    box-shadow: royalblue;
+    margin:100px 30px;
+}
+
+.bannerdescription p {
+   padding: 70px 0px 50px 50px;
+}
+
+ .bannerimage{
+    margin:0px 20px 20px 20px;
+} 
+/* .bannerimage img{
+    padding: 40px 40px 40px 0px ;
+    /* border-radius: 30%; 
+} */
+.bannerimage img{
+    border: 2px solid; 
+   margin: 0 auto;
+   height: 100%;
+   width: 100%;
+   padding: 40px 40px 40px 40px ;
+   border-radius: 30%;
+}
+.famousrestaurantcards{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.famousrestauranttitle{
+    background-color: black;
+    color: white;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 10%;
+    /* margin: 0 auto; */
+
+}
+.famousfoodcards{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.famousfoodtitle{
+    background-color: black;
+    color: white;
+    margin-top: 40px;
+    margin-left: 10%;
+width: 80%;
+/* margin: 0 auto; */
+}
+.dishcardmain{
+    background-color: lightpink;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+
+
+
+
+/* Login signup profile styling */
+.mt-20 {
+    margin-top: 20px;
+}
+
+.profile-div{
+position: relative;
+}
+.profilepic {
+    border: 4px solid grey;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+   
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+.profileloader{
+    margin: 0 auto;
+}
+
+
+
+ /* restaurant Profile  */
+ .dishcard{
+     margin-top: 40px;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     
+ }
+
+
+
+/* Footer styling
+.footer-div{
+    background-color: rgb(238, 237, 237);
+    padding: 30px 0;
+}
+.footer-text{
+    font-family: "brandon";
+}
+.footer-logo{
+    margin-bottom: 20px;
+}
+.footer-input{
+    background-color: green;
+}
+.footer-input::placeholder{
+    color: white;
+}
+.footer-head{
+    font-weight: bold;
+    font-family: "brandon";
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.footer-link{
+    text-decoration: none;
+    color: darkgrey;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+}
+.footer-link:hover{
+    text-decoration: none;
+    color: black;
+}*/
+.footer-dark {
+    margin-top: 30px;
+    padding:50px 0;
+    color:white;
+    background-color:black;
+  }
+  
+  .footer-dark h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  
+  .footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+  }
+  
+  .footer-dark ul a:hover {
+    opacity:0.8;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+      text-align:center;
+      padding-bottom:20px;
+    }
+  }
+  
+  .footer-dark .item.text {
+    margin-bottom:36px;
+  }
+  
+  @media (max-width:767px) {
+    .footer-dark .item.text {
+      margin-bottom:0;
+    }
+  }
+  
+  .footer-dark .item.text p {
+    opacity:0.6;
+    margin-bottom:0;
+  }
+  
+  .footer-dark .item.social {
+    text-align:center;
+  }
+  
+  @media (max-width:991px) {
+    .footer-dark .item.social {
+      text-align:center;
+      margin-top:20px;
+    }
+  }
+  
+  .footer-dark .item.social > a {
+    font-size:20px;
+    width:36px;
+    height:36px;
+    line-height:36px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+    margin:0 8px;
+    color:#fff;
+    opacity:0.75;
+  }
+  
+  .footer-dark .item.social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-dark .copyright {
+    text-align:center;
+    padding-top:24px;
+    opacity:0.3;
+    font-size:13px;
+    margin-bottom:0;
+  }
+  
+  
+
+
+
+@media only screen and (max-width: 500px) {
+    
+    .mainbanner{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    
+    }
+    .banner{
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .bannerdescription{
+        /* border: 2px solid; */
+        margin:0 auto;
+    }
+    /* .bannerimage{
+        margin: 0 auto;
+    } */
+    .bannerimage{
+        /* margin: 0 auto; */
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+    }
+    /* .bannerimage img{
+         border: 2px solid; 
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        padding: 40px 40px 40px 40px ;
+        border-radius: 30%;
+    } */
+    .footer-div{
+        background-color: rgb(238, 237, 237);
+        padding: 0;
+    }
+  }
+
+
+  
+@media only screen and (max-width: 350px) {
+    body {
+      background-color: lightcyan;
+    }
+    .banner{
+    
+        margin: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+    .bannerdescription{
+        /* border: 2px solid; */
+        margin:0 auto;
+    }
+    .bannerimage{
+        /* margin: 0 auto; */
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .bannerimage img{
+        /* border: 2px solid; */
+        margin: 0 auto;
+        height: 100%;
+        width: 80%;
+        padding: 40px 40px 40px 40px ;
+        border-radius: 30%;
+    }
+   
+  }
