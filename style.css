@@ -61,11 +61,11 @@ body{
 .famoustitle{
     background-color: black;
     color: white;
-    width: 97%;
+    width: 100%;
     text-align: center;
-    margin-top: 40px;
-    margin-left: 1%;
-    border-radius: 20%;
+    margin-top: 65px;
+    /* margin-left: 1%; */
+    /* border-radius: 20%; */
     /* margin: 0 auto; */
 
 }
@@ -87,6 +87,21 @@ body{
     padding: 15px;
     border: 1px solid;
     border-radius: 20%;
+}
+
+
+.card-body p {
+    text-align: center;
+}
+.card-body a {
+   width: 100%;
+   text-align: center;
+   /* margin: 0 auto; */
+}
+.card-body h5 {
+    text-align: center;
+    width: 100%;
+    /* margin: 0 auto;     */
 }
 /* .dishcardmain{
     background-color: lightpink;
@@ -145,11 +160,13 @@ position: relative;
 
 
 .footer-dark {
-    margin-top: 30px;
-    padding:50px 0;
+    height: 467px;
+    margin-top: 150px;
+    padding:10px 0;
     color:white;
     background-color:black;
-  }
+    
+}
   
   .footer-dark h3 {
     margin-top:0;
@@ -339,13 +356,11 @@ position: relative;
         color: white;
         width: 100%;
         margin-top: 20px;
+        font-size: medium;
         /* margin-left: 5%; */
         padding: 10px;
-        display: flex;
-        justify-content: center;
         border: 1px solid white;
-        /* border-radius: 30%; */
-
+        border-radius: 0;
     }
     .famouscards{
         margin-top: 20px;
@@ -354,14 +369,16 @@ position: relative;
         flex-wrap: wrap;
     }
     .card-body p {
-        margin: 10px;
+        text-align: center;
     }
     .card-body a {
        width: 100%;
-       margin: 0 auto;
+       text-align: center;
+       /* margin: 0 auto; */
     }
     .card-body h5 {
-        width: 60%;
-        margin: 0 auto;    
+        text-align: center;
+        width: 100%;
+        /* margin: 0 auto;     */
     }
   }
