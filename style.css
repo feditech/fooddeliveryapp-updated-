@@ -16,9 +16,6 @@ body{
 }
 
 
-.carousel-caption{
-    display: inline;
-}
 .mainbanner{
     width: 100%;
     margin: 0;
@@ -52,15 +49,31 @@ body{
    display: flex;
    justify-content: center;
 } 
-/* .bannerimage img{
-    padding: 40px 40px 40px 0px ;
-    /* border-radius: 30%; 
-} */
 .bannerimage img{
     border: 2px solid; 
     margin: 0 auto;
    padding: 30px 30px 30px 30px ;
    border-radius: 30%;
+}
+
+
+
+.famoustitle{
+    background-color: black;
+    color: white;
+    width: 97%;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 1%;
+    border-radius: 20%;
+    /* margin: 0 auto; */
+
+}
+.famouscards{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -74,33 +87,14 @@ body{
     padding: 15px;
     border: 1px solid;
     border-radius: 20%;
-    
-
 }
-
-
-.famoustitle{
-    background-color: black;
-    color: white;
-    width: 86%;
-    margin-top: 40px;
-    margin-left: 7%;
-    /* margin: 0 auto; */
-
-}
-.famouscards{
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-.dishcardmain{
+/* .dishcardmain{
     background-color: lightpink;
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; 
-}
+} */
 
 
 
