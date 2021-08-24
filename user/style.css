@@ -1,7 +1,9 @@
 body{
     font-family: 'Roboto Slab', serif;
 }
-
+a{
+    text-decoration: none;
+}
 .navbar{
     color: white;
 }

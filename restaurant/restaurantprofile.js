@@ -1,6 +1,8 @@
+//to get restaurant profile data from database
+
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-     
+        
         let restaurantname = document.getElementById("restaurantname")
         let email = document.getElementById("email")
         let country = document.getElementById("country")
@@ -9,7 +11,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
         var uid = user.uid;
         firebase.database().ref(`restaurant/${uid}`)
-        .once('value',(data)=>{
+        .on('value',(data)=>{
            
             // console.log(data.val().profilepic == "")
             restaurantname.innerHTML =  data.val().Restaurantname
@@ -17,8 +19,8 @@ firebase.auth().onAuthStateChanged((user) => {
             country.innerHTML = data.val().Country
             city.innerHTML = data.val().City
 
-            if(data.val().profilepic != null){
-                defaultDp.setAttribute("src",`${data.val().profilepic}`)
+            if(data.val().Profilepic != null){
+                defaultDp.setAttribute("src",`${data.val().Profilepic}`)
             }
         })
      // ...
@@ -29,13 +31,31 @@ firebase.auth().onAuthStateChanged((user) => {
     }
   });
 
+//to get dishes data from database
+  firebase.auth().onAuthStateChanged((user) => {                  
+    if (user) {
+        let dishcard = document.getElementById("dishcard")
+        dishcard.innerHTML=""
+        var uid = user.uid;
+        firebase.database().ref(`restaurant/${user.uid}/dishes`)
+        .on("child_added",(data)=>{
+    
+                let card = ` <div class="card" style="width: 18rem;">
+                                  <img height=200px width=100%  src="${data.val().Picurl}" alt="...">
+                                  <div class="card-body">
+                                    <h5   class="card-title">${data.val().Dishname}</h5>
+                                    <h6  >Rs: ${data.val().Dishprice} </h6>
+                                    <h6>Delivery: ${data.val().Deliverytype} </h6>
+                                    <h6>Category: ${data.val().Category} </h6>
+                                  </div>
+                                </div>`   
+                                
+                                dishcard.innerHTML += card;
+           
+        })
+    }
+})
 
-  let logout = ()=>{
-      firebase.auth().signOut()
-      .then((res) =>{
-          window.location = "restaurantlogin.html"
-      } )
-  }
   
 
 
@@ -78,9 +98,9 @@ firebase.auth().onAuthStateChanged((user) => {
 
     let Ref = firebase.storage().ref(`profilepics/${profilepic.files[0].name}`);
     let profilePicUrl = await uploadFiles(profilepic.files[0],Ref)  
-    console.log(profilePicUrl)
+    // console.log(profilePicUrl)
     firebase.auth().onAuthStateChanged((user) => {
-        firebase.database().ref(`restaurant/${user.uid}`).update({profilepic: profilePicUrl})
+        firebase.database().ref(`restaurant/${user.uid}`).update({Profilepic: profilePicUrl})
         .then(()=>{
             closebtn.click()
             defaultDp.setAttribute("src",`${profilePicUrl}`)
@@ -90,21 +110,11 @@ firebase.auth().onAuthStateChanged((user) => {
         
   } 
    
-  
-//   firebase.auth().onAuthStateChanged((user) => {
-//       firebase.database().ref(`restaurant/${user.uid}/dishes`).push({})
-//       .then(()=>{
-//           closebtn.click()
-//           defaultDp.setAttribute("src",`${profilePicUrl}`)
-//       })
-  
-//   })
-      
-       
+
   
   
 
-  let Dish = async ()=>{
+  let addDish = async ()=>{
     let dishcategory = document.getElementById("dishcategory")
     let dishname = document.getElementById("dishname")
     let dishprice = document.getElementById("dishprice")
@@ -118,47 +128,58 @@ firebase.auth().onAuthStateChanged((user) => {
     
    
                     // used on state change just to get user id
+                   
                     firebase.auth().onAuthStateChanged((user) => {
-                              firebase.database().ref(`restaurant/${user.uid}/dishes`).push({
+                        // console.log(user.uid)
+                        firebase.database().ref(`restaurant/${user.uid}/dishes`).push({
                                   Dishname: dishname.value,
                                   Dishprice: dishprice.value,
                                   Picurl: picUrl,
                                   Deliverytype: deliverytype.value,
-                                  Category: dishcategory.value
+                                  Category: dishcategory.value,
+                                  Restaurantid: user.uid
+                                    
                               })
-                              .then(()=>{
-                                 
-                                  closebtn.click()
-                                  
+                              //after push is done we get pushid in .then()  
+                              .then((snapshot)=>{
+                                let dishid  = snapshot.key
+                                //seting anthor dish id atribute in dish
+                                firebase.database().ref(`restaurant/${user.uid}/dishes/${dishid}`).update(
+                                    { Dishid: dishid }
+                                )
+                                .then(()=>{
+                                    closebtn.click()
+                                })                                    
                               })
-                          
+                              
+                              
                           })
 
+                              
   }
     
 
-  firebase.auth().onAuthStateChanged((user) => {
-   
-                     
-    if (user) {
-        let dishcard = document.getElementById("dishcard")
-        dishcard.innerHTML=""
-        var uid = user.uid;
-        firebase.database().ref(`restaurant/${user.uid}/dishes`)
-        .on("child_added",(data)=>{
-    
-                let card = ` <div class="card" style="width: 18rem;">
-                                  <img height=200px width=100%  src="${data.val().Picurl}" alt="...">
-                                  <div class="card-body">
-                                    <h5   class="card-title">${data.val().Dishname}</h5>
-                                    <h6  >Rs: ${data.val().Dishprice} </h6>
-                                    <h6>Delivery: ${data.val().Deliverytype} </h6>
-                                    <h6>Category: ${data.val().Category} </h6>
-                                  </div>
-                                </div>`   
-                                
-                                dishcard.innerHTML += card;
-           
-        })
-    }
-})
+ 
+
+
+let logout = ()=>{
+    firebase.auth().signOut()
+    .then((res) =>{
+        window.location = "restaurantlogin.html"
+    } )
+}
+
+
+
+
+  
+//   firebase.auth().onAuthStateChanged((user) => {
+//       firebase.database().ref(`restaurant/${user.uid}/dishes`).push({})
+//       .then(()=>{
+//           closebtn.click()
+//           defaultDp.setAttribute("src",`${profilePicUrl}`)
+//       })
+  
+//   })
+      
+       

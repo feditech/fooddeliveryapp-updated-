@@ -6,9 +6,6 @@ let signupvalidate = ()=>{
     let phone = document.getElementById("phone")
     let country = document.getElementById("country")
     let city = document.getElementById("city")
-    
-
-
 
     let empty = /.*\S.*/;
     let emailcheck = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -107,7 +104,6 @@ firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
             email.value = ""
             password.value = ""
             swal("Successfully Signed up", "User account Created ", "success");
-            successdiv.innerText=""
             setTimeout(() => {
                 window.location = "userlogin.html"
             }, 1000)

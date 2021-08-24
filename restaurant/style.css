@@ -1,7 +1,9 @@
 body{
     font-family: 'Roboto Slab', serif;
 }
-
+a{
+    text-decoration: none;
+}
 .navbar{
     color: white;
 }
@@ -72,8 +74,6 @@ margin: 0 auto;
 
 
 
-
-
 /* Login signup profile styling */
 .mt-20 {
     margin-top: 20px;
@@ -126,9 +126,6 @@ position: relative;
     justify-content: space-around;
     flex-wrap: wrap; 
 } */
-
- 
-
  .card-body{
     /* width: 80%; */
     margin: 0 auto;

@@ -84,7 +84,7 @@ let register = async () => {
                     Country: `${country.value}`,
                     City: `${city.value}`,
                     Type: "restaurant",
-                    Uid: user.uid
+                    Restaurantid: user.uid
                     // profilepic: ""
 
                 }

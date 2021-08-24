@@ -1,0 +1,22 @@
+#Pendingdiv{
+background-color: violet;
+height: 800px;
+}
+
+#Accepteddiv{
+    background-color: rgb(0, 151, 76);
+    height: 800px;
+}
+
+#Delivereddiv{
+    background-color: rgb(109, 79, 216);
+    height: 800px;
+}
+
+
+#dishcard{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
