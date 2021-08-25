@@ -12,30 +12,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-           <div>
-               <a href="../index.html">
+          <a class="navbar-brand" href="../index.html">
             <img width="60px" height="50px" src="https://www.pngitem.com/pimgs/m/249-2490135_tablespoon-fork-icon-food-logo-icon-restaurant-hd.png" alt="" width="30" height="24">
-        </a>
-    <a class="navbar-brand" href="../index.html">Food Ready</a>
-           </div>
+           </a>
+            <a class="navbar-brand" href="../index.html">Food Ready</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
            <div>
-            <a href="../user/userlogin.html"><button class="btn btn-outline-success btn1" type="submit">Customer LOGIN</button></a>
-            <a href="restaurantlogin.html"><button class="btn btn-outline-success btn1" type="submit">Restaurant LOGIN</button></a>
-           </div> 
+            <a href="../user/usersignup.html"><button style="width: 200px; font-size: large;" class="btn  btn1" type="submit">Customer Signup</button></a>
+            <!-- <a href="../restaurant/restaurantsignup.html"><button style="width: 200px; font-size: large;" class="btn  btn1" type="submit">Restaurant Signup</button></a> -->
+            <!-- <a href="../restaurant/restaurantsignup.html"><button style="display: none; width: 200px; font-size: large;" class="btn  btn1" type="submit">Restaurant Login</button></a>  -->
             
+            <!-- <a href="restaurantlogin.html"><button class="btn btn-outline-success btn1" type="submit">Restaurant LOGIN</button></a> -->
+           </div> 
+        </div>
         </div>
     </nav>
 
-
     
-
-
-
     <div class="container">
         <div class="row justify-content-center mt-20">
-            <div class="col-6">
+            <div class="col-6 fields">
                 <h2>Restaurant Signup</h2>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Restaurant Name</label>
@@ -75,7 +78,7 @@
                    <div id="loader" class="spinner-border" role="status" style="display: none;">
                   </div> 
                 </button>
-            
+                <h6>Already Have an account? <a href="restaurantlogin.html">Login here</a> </h6>
               
             
             </div>
@@ -114,7 +117,15 @@
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>    
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="restaurantsignup.js"></script>

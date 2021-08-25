@@ -142,4 +142,7 @@ position: relative;
         padding: 40px 40px 40px 40px ;
         border-radius: 30%;
     }
+    .fields{
+        width: 70%;
+    }
   }
