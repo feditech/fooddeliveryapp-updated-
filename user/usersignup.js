@@ -15,7 +15,7 @@ let signupvalidate = ()=>{
  
       
     
-    if(usercheck.test(name.value) && empty.test(name.value)){
+    if(empty.test(name.value)){
         name.style.background="white"
         if(emailcheck.test(email.value)){
             email.style.background="white";

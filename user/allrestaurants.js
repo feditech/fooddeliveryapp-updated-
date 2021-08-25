@@ -91,6 +91,17 @@ ordernow = (Resid, Dishid) => {
                   })                                    
                 })
 
+}
+
+
+let logout = () => {
+  firebase.auth().signOut()
+    .then((res) => {
+      window.location = "userlogin.html"
+    })
+}
+
+
 
 //     push({
 //       Dishname: dishname.value,
@@ -115,31 +126,3 @@ ordernow = (Resid, Dishid) => {
   
   
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-let logout = () => {
-  firebase.auth().signOut()
-    .then((res) => {
-      window.location = "userlogin.html"
-    })
-}

@@ -1,6 +1,10 @@
 #Pendingdiv{
-background-color: violet;
-height: 800px;
+
+
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+height: 100%;
 }
 
 #Accepteddiv{
@@ -14,9 +18,60 @@ height: 800px;
 }
 
 
-#dishcard{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.card-body {
+    
+    margin: 0 auto;
+    padding: 0;
+}
+.card-body h5 {
+    text-align: center;
+    font-size: small;
+}
+.card-body h6 {
+    text-align: center;
+    font-size: small;
+}
+.card-body a {
+    text-align: center;
+    font-size: small;
+}
+
+
+/* 
+.card{
+   
+    width: 130px !important;
+    height: 150px  !important;
+    
+   
+  
 } 
+.card img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.card-body {
+  
+    margin: 0 auto;
+    padding: 0;
+}
+.card-body h5 {
+    font-size: small;
+}
+.card-body h6 {
+    font-size: small;
+}
+
+@media only screen and (max-width: 400px) {
+    .card{
+   
+        width: 80px !important;
+        height: 60px;
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+} */
