@@ -69,8 +69,6 @@ ordernow = (Resid, Dishid) => {
       order = data.val()
       // console.log(order)
   })   
-
-
     firebase.database().ref(`restaurant/${Resid}/pendingorders`).push({
               Dishname: order.Dishname,
               Dishprice:   order.Dishprice,
