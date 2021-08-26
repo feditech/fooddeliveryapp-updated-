@@ -14,6 +14,24 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div>
+        <a href="../index.html">
+     <img width="60px" height="50px" src="https://www.pngitem.com/pimgs/m/249-2490135_tablespoon-fork-icon-food-logo-icon-restaurant-hd.png" alt="" width="30" height="24">
+ </a>
+<a class="navbar-brand" href="../index.html">Food Ready</a>
+    </div>  
+             <div>
+            <button onclick="" class="btn btn-outline-success btn1" type="submit" data-toggle="modal" data-target="#exampleModal1" >Add a dish</button>
+            <a href="restaurantprofile.html"> <button onclick="" class="btn btn-outline-success btn1" type="submit">Restaurant Profile</button> </a>
+            
+            <!-- <button onclick="" class="btn btn-outline-success" type="submit">Place order</button> -->
+            <button onclick="logout()" class="btn btn-outline-success btn1" type="submit">Logout</button>
+        </div>
+        
+    </div>
+</nav>
     <!-- <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div>
@@ -59,6 +77,49 @@
       </div>
 
       
+
+
+   <!-- Modal For Add a dish -->
+
+   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a dish</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <select name="" id="dishcategory">
+              <option value="FastFood">FastFood</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Desi">Desi</option>
+              <option value="Thai">Thai</option>
+
+            </select> <br>
+            <input type="text" id="dishname" placeholder="Enter Item name"> <br>
+            <input type="text" id="dishprice" placeholder="Enter Price"> <br>
+            <input type="file" id="dishpic"><br>
+            <select name="" id="deliverytype">
+              <option value="Free">Free</option>
+              <option value="Paid">Paid</option>
+            </select>
+        </div>
+        <div class="modal-footer">
+          <button id="closebtn1" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button onclick="addDish()" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->

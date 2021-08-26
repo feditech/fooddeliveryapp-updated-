@@ -32,12 +32,12 @@
         var uid = user.uid;
         firebase.database().ref(`restaurant/${uid}/acceptedorders`)
         .on("child_added",(data)=>{
-            console.log(data.val())
+            // console.log(data.val())
              let orderid = data.val().Orderid;
              let resid = data.val().Restaurantid;
               let dishid= data.val().Dishid;
               let customerid = data.val().Customerid;
-              console.log(orderid,resid,dishid)
+            //   console.log(orderid,resid,dishid)
             //   console.log(data.val())
              let ul1 = ` <ul style="list-style-type:none"> 
             <li style="text-align:center"><img height=60px width=80px  src="${data.val().Picurl}" alt="..."> </li>
@@ -124,7 +124,7 @@ let orderAccepted = (OrderID,Resid,Dishid,CustomerId)=>{
     })   
 }
 
-let orderDelivered = (OrderID,Resid,Dishid)=>{
+let orderDelivered = (OrderID,Resid,Dishid,CustomerId)=>{
     var order;
     firebase.database().ref(`restaurant/${Resid}/acceptedorders/${OrderID}`)
     .on('value', (data)=>{
@@ -141,7 +141,8 @@ let orderDelivered = (OrderID,Resid,Dishid)=>{
     Category:    order.Category ,
     Restaurantid:  order.Restaurantid     ,
     Dishid: order.Dishid,
-    Orderid:   OrderID
+    Orderid:   OrderID,
+    Customerid : CustomerId
     }
     )
     firebase.database().ref(`restaurant/${Resid}/acceptedorders/${OrderID}`).remove()
@@ -155,6 +156,50 @@ let orderDelivered = (OrderID,Resid,Dishid)=>{
 
 
 
+let addDish = async ()=>{
+    let dishcategory = document.getElementById("dishcategory")
+    let dishname = document.getElementById("dishname")
+    let dishprice = document.getElementById("dishprice")
+    let dishpic = document.getElementById("dishpic")
+    let deliverytype = document.getElementById("deliverytype")
+    
+    // uploading dish picture on firebase storage
+    let Ref = firebase.storage().ref(`dishpic/${dishpic.files[0].name}`)
+    let picUrl = await uploadFiles(dishpic.files[0],Ref)  
+    let closebtn = document.getElementById("closebtn1")
+    
+   
+                    // used on state change just to get user id
+                   
+                    firebase.auth().onAuthStateChanged((user) => {
+                        // console.log(user.uid)
+                        firebase.database().ref(`restaurant/${user.uid}/dishes`).push({
+                                  Dishname: dishname.value,
+                                  Dishprice: dishprice.value,
+                                  Picurl: picUrl,
+                                  Deliverytype: deliverytype.value,
+                                  Category: dishcategory.value,
+                                  Restaurantid: user.uid
+                                    
+                              })
+                              //after push is done we get pushid in .then()  
+                              .then((snapshot)=>{
+                                let dishid  = snapshot.key
+                                //seting anthor dish id atribute in dish
+                                firebase.database().ref(`restaurant/${user.uid}/dishes/${dishid}`).update(
+                                    { Dishid: dishid }
+                                )
+                                .then(()=>{
+                                    closebtn.click()
+                                })                                    
+                              })
+                              
+                              
+                          })
+
+                              
+  }
+    
 
     /*  
           ()=>{

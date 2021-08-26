@@ -1,6 +1,6 @@
 #Pendingdiv{
 
-
+margin: 80px 0 ;
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
@@ -8,6 +8,7 @@ height: 100%;
 }
 
 #Accepteddiv{
+    margin: 80px 0  ;
     display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
@@ -15,12 +16,16 @@ height: 100%;
 }
 
 #Delivereddiv{
+    margin: 80px 0 ;
     display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 height: 100%;
 }
 
+a{
+    text-decoration: none;
+}
 
 .card-body {
     
