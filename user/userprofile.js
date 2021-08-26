@@ -1,3 +1,21 @@
+
+
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // var uid = user.uid;
+     
+    }
+    else {   
+        window.location = "usersignup.html"
+    }
+})
+
+
+
+
+
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         // console.log(user)

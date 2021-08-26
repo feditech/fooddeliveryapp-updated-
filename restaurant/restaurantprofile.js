@@ -1,3 +1,19 @@
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // var uid = user.uid;
+     
+    }
+    else {   
+        window.location = "restaurantsignup.html"
+    }
+})
+
+
+
+
+
+
 //to get restaurant profile data from database
 
 firebase.auth().onAuthStateChanged((user) => {
