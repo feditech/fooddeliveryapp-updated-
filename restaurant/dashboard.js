@@ -1,53 +1,161 @@
-
+//do bar on state lagana h
 //for pending orders
 
-var onstate= firebase.auth().onAuthStateChanged((user) => {                  
+ firebase.auth().onAuthStateChanged((user) => {                  
     if (user) {
-        let dishcard = document.getElementById("Pendingdiv")
-        dishcard.innerHTML=""
+        let pendingdiv = document.getElementById("Pendingdiv")
+        // pendingdishcard.innerHTML=""
         var uid = user.uid;
         firebase.database().ref(`restaurant/${uid}/pendingorders`)
         
         .on("child_added",(data)=>{
-             orderid = data.val().Orderid;
-             resid = data.val().Restaurantid;
-             dishid= data.val().Dishid;
-             ul = ` <ul style="list-style-type:none"> 
+             let orderid = data.val().Orderid;
+             let resid = data.val().Restaurantid;
+             let dishid= data.val().Dishid;
+             let customerid = data.val().Customerid;
+            let ul = ` <ul style="list-style-type:none"> 
             <li style="text-align:center"><img height=60px width=80px  src="${data.val().Picurl}" alt="..."> </li>
             <li style="text-align:center" >${data.val().Dishname} </li>
             <li style="text-align:center"> Rs: ${data.val().Dishprice}</li>
             <li style="text-align:center">Delivery:${data.val().Deliverytype}</li>
             <li style="text-align:center">Category: ${data.val().Category} </li>
-            <h2><button onclick="orderAccepted('${orderid}','${resid}', '${dishid}')" width=100% type="button" class="btn btn-primary btn">Accept Order Now</button></h2>
+            <h2><button onclick="orderAccepted('${orderid}','${resid}', '${dishid}','${customerid}')" width=100% type="button" class="btn btn-primary btn">Accept Order Now</button></h2>
             <ul>`
-            Pendingdiv.innerHTML += ul;
-            //window.location.reload()
+            // console.log(data.val())
+            pendingdiv.innerHTML += ul;
+                })
+        
+        // for accepted div
+
+        let accepteddiv = document.getElementById("Accepteddiv")
+        // accepteddiv.innerHTML=""
+        var uid = user.uid;
+        firebase.database().ref(`restaurant/${uid}/acceptedorders`)
+        .on("child_added",(data)=>{
+            console.log(data.val())
+             let orderid = data.val().Orderid;
+             let resid = data.val().Restaurantid;
+              let dishid= data.val().Dishid;
+              let customerid = data.val().Customerid;
+              console.log(orderid,resid,dishid)
+            //   console.log(data.val())
+             let ul1 = ` <ul style="list-style-type:none"> 
+            <li style="text-align:center"><img height=60px width=80px  src="${data.val().Picurl}" alt="..."> </li>
+            <li style="text-align:center" >${data.val().Dishname} </li>
+            <li style="text-align:center"> Rs: ${data.val().Dishprice}</li>
+            <li style="text-align:center">Delivery:${data.val().Deliverytype}</li>
+            <li style="text-align:center">Category: ${data.val().Category} </li>
+            <h2><button onclick="orderDelivered('${orderid}','${resid}', '${dishid}','${customerid}')" width=100% type="button" class="btn btn-primary btn">Deliver Order Now</button></h2>
+            <ul>`
+            // console.log(data.val())
+            accepteddiv.innerHTML += ul1;
+                })
+    
+                 
+            // for delivered div
+        
+            let Delivereddiv = document.getElementById("Delivereddiv")
+            // accepteddiv.innerHTML=""
+            var uid = user.uid;
+            firebase.database().ref(`restaurant/${uid}/deliveredorders`)
+            .on("child_added",(data)=>{
+                // console.log(data.val())
+                 let orderid = data.val().Orderid;
+                 let resid = data.val().Restaurantid;
+                  let dishid= data.val().Dishid;
+                  let customerid = data.val().Customerid;
+                  console.log(orderid,resid,dishid)
+                 let ul2 = ` <ul style="list-style-type:none"> 
+                <li style="text-align:center"><img height=60px width=80px  src="${data.val().Picurl}" alt="..."> </li>
+                <li style="text-align:center" >${data.val().Dishname} </li>
+                <li style="text-align:center"> Rs: ${data.val().Dishprice}</li>
+                <li style="text-align:center">Delivery:${data.val().Deliverytype}</li>
+                <li style="text-align:center">Category: ${data.val().Category} </li>
+                <h2><button onclick="orderDelivered('${orderid}','${resid}', '${dishid}','${customerid}')" width=100% type="button" class="btn btn-primary btn">Remove from Deliver</button></h2>
+                <ul>`
+                // console.log(data.val())
+                Delivereddiv.innerHTML += ul2;
+                    })
+        
+        
+            }
         })
-        // window.location.reload()
-    }
-})
  
 
-let orderAccepted = ( Orderid,Resid,Dishid)=>{
-    
-    // window.location.reload()
-    // onstate()
 
-    firebase.database().ref(`restaurant/${Resid}/pendingorders/`)
-    .once('value', (data)=>{
-       
-        console.log(data.val())  
+
+
+
+
+
+
+
+
+//order accepted function
+
+let orderAccepted = (OrderID,Resid,Dishid,CustomerId)=>{
+    var order;
+    // console.log(OrderID , Resid,Dishid)
+    firebase.database().ref(`restaurant/${Resid}/pendingorders/${OrderID}`)
+    .on('value', (data)=>{
+        order = data.val()        
     })
  
-    
-    
+    firebase.database().ref(`restaurant/${Resid}/acceptedorders/${OrderID}`).set(
+        {
+    Dishname: order.Dishname,
+    Dishprice:   order.Dishprice,
+    Picurl:     order.Picurl,
+    Deliverytype:  order.Deliverytype,
+    Category:    order.Category ,
+    Restaurantid:  order.Restaurantid     ,
+    Dishid: order.Dishid,
+    Orderid:   OrderID,
+    Customerid: CustomerId
+    }
+    )
+    firebase.database().ref(`restaurant/${Resid}/pendingorders/${OrderID}`).remove()
+    .then(()=>{
+        setTimeout(()=>{
+            window.location.reload();
 
-    // console.log("orderid===>" ,orderid)
-    // firebase.database().ref(`restaurant/${resid}/acceptedorders/${orderid}`).set({
-
-    // })
-    
+        },1500)
+        
+    })   
 }
+
+let orderDelivered = (OrderID,Resid,Dishid)=>{
+    var order;
+    firebase.database().ref(`restaurant/${Resid}/acceptedorders/${OrderID}`)
+    .on('value', (data)=>{
+        order = data.val()        
+    })
+ 
+
+    firebase.database().ref(`restaurant/${Resid}/deliveredorders/${OrderID}`).set(
+        {
+    Dishname: order.Dishname,
+    Dishprice:   order.Dishprice,
+    Picurl:     order.Picurl,
+    Deliverytype:  order.Deliverytype,
+    Category:    order.Category ,
+    Restaurantid:  order.Restaurantid     ,
+    Dishid: order.Dishid,
+    Orderid:   OrderID
+    }
+    )
+    firebase.database().ref(`restaurant/${Resid}/acceptedorders/${OrderID}`).remove()
+    .then(()=>{
+        setTimeout(()=>{
+            window.location.reload();
+
+        },1500)
+    })  
+}
+
+
+
+
     /*  
           ()=>{
 let card = ` <div class="card" style="width: 18rem;">

@@ -59,36 +59,44 @@ let exploreRestaurant = (restaurantid) => {
 }
 
 
-
+//used custom id for order
 ordernow = (Resid, Dishid) => {
 
-    // console.log(Resid, Dishid)
     var order;
+  //to get ordered dish data
   firebase.database().ref(`restaurant/${Resid}/dishes/${Dishid}`)
   .on("value",(data)=>{
       order = data.val()
       // console.log(order)
   })   
-    firebase.database().ref(`restaurant/${Resid}/pendingorders`).push({
-              Dishname: order.Dishname,
-              Dishprice:   order.Dishprice,
-              Picurl:     order.Picurl,
-              Deliverytype:  order.Deliverytype,
-              Category:    order.Category ,
-              Restaurantid:  order.Restaurantid     ,
-              Dishid: order.Dishid
-            })
-            .then((snapshot)=>{
-                  let orderid  = snapshot.key
-                  //seting anthor order id atribute in pending order
-                  firebase.database().ref(`restaurant/${Resid}/pendingorders/${orderid}`).update(
-                      { Orderid: orderid }
-                  )
-                  .then(()=>{
+
+  var User;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      User = user.uid;
+    
+    }})
+  //genereating custom order id
+  let orderid =  Math.round(Math.random() * 1222312312312)
+   orderid = `ord${orderid}`
+  firebase.database().ref(`restaurant/${Resid}/pendingorders/${orderid}`).set({
+    Dishname: order.Dishname,
+    Dishprice:   order.Dishprice,
+    Picurl:     order.Picurl,
+    Deliverytype:  order.Deliverytype,
+    Category:    order.Category ,
+    Restaurantid:  order.Restaurantid     ,
+    Dishid: order.Dishid,
+    Orderid:  orderid,
+    Customerid: `${firebase.auth().currentUser.uid}`
+  })               
+  .then(()=>{
+                    // alert("user id",User.uid)
                     swal("Success", "Order placed", "success");
-                  })                                    
                 })
 
+
+            
 }
 
 
