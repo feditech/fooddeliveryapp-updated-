@@ -269,24 +269,26 @@ body {
     }
 
     .banner {
-        height: 500px;
+        height: 480px;
         width: 100%;
         margin: 0px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        align-content: center;
 
     }
 
     .bannerdescription {
         /* border: 2px solid; */
-        margin: 0 auto;
+        margin: 0 0 20px 0;
     }
 
     .bannerdescription p {
         padding: 0;
         margin: 0;
         font-size: x-small;
+
     }
 
     /* .bannerimage{
@@ -321,10 +323,11 @@ body {
     }
 
     .banner {
-        height: 500px;
+        height: 480px;
         /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
+        align-content: center;
         justify-content: space-around;
 
     }
@@ -332,7 +335,7 @@ body {
     .bannerdescription {
         /* border: 2px solid; */
 
-        margin: 0;
+        margin: 0 0 20px 0;
     }
 
     .bannerdescription p {
