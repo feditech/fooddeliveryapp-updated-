@@ -271,7 +271,7 @@ body {
     .banner {
         /* height: 480px;
          */
-         height: 100vh;
+         height: 60vh;
         width: 100%;
         margin: 0px;
         display: flex;
@@ -285,7 +285,6 @@ body {
         /* border: 2px solid; */
         margin: 0 0 20px 0;
     }
-
     .bannerdescription p {
         padding: 0;
         margin: 0;
@@ -317,8 +316,6 @@ body {
     }
 }
 
-
-
 @media only screen and (max-width: 380px) {
     .navbar {
         padding-top: 0;
@@ -326,7 +323,7 @@ body {
 
     .banner {
         /* height: 480px; */
-        height: 100vh;
+        height: 60vh;
         /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
