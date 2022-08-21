@@ -16,44 +16,42 @@ body{
 }
 
 
-.mainbanner{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-}
 .banner{
     margin: 0;
     padding: 0;
     width: 100%;
     background-image: url("./images/mainpage/s2.webp");
-    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    height: 610px;
     color: white;
 }
 .bannerdescription{
+    text-align: center;
     box-shadow: royalblue;
     /* margin:100px 30px; */
 }
 
 .bannerdescription p {
     width: 100%;
-   padding: 80px 40px ;
+   padding: 60px 30px ;
 }
 
  .bannerimage{
-    margin:0px 20px 20px 20px;
+    margin:0px 20px 0px 20px;
     margin: 0 auto;
    width: 80%;
    display: flex;
    justify-content: center;
 } 
 .bannerimage img{
-    border: 2px solid; 
+    border: 2px solid black; 
     margin: 0 auto;
-   padding: 30px 30px 30px 30px ;
-   border-radius: 30%;
+    height: 80% !important;
+   /* padding: 30px 30px 30px 30px ; */
+   /* border-radius: 30%; */
+
 }
 
 
