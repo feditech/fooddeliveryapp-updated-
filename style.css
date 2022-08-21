@@ -271,6 +271,7 @@ body {
         margin: 0px;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
 
     }
 
@@ -317,6 +318,7 @@ body {
         /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
 
     }
 
@@ -336,7 +338,8 @@ body {
         width: 95%;
         display: flex;
         justify-content: space-around;
-        margin: 0px 10px;
+        margin: 0px;
+        padding: 0;
     }
 
     .bannerimage img {
