@@ -316,22 +316,22 @@ position: relative;
     }
     
 .bannerdescription p {
-    padding: 40px 0px 30px 30px;
+    padding: 20px 0px 20px 20px;
  }
     .bannerimage{
         /* margin: 0 auto; */
         width: 95%;
         display: flex;
         justify-content: space-around;
-        margin: 10px;
+        margin: 0px 10px;
     }
     .bannerimage img{
         /* border: 2px solid; */
         margin: 0 auto;
         height: 100%;
         width: 90%;
-        padding: 20px ;
-        border-radius: 30%;
+        /* padding: 20px ; */
+        /* border-radius: 30%; */
     }
     .card img{
         margin: 0 auto;
