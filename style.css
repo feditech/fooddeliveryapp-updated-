@@ -312,7 +312,9 @@ body {
 
 
 @media only screen and (max-width: 380px) {
-
+    .navbar{
+        height: 120px;
+    }
     .banner {
         height: 500px;
         /* margin: 20px; */
