@@ -269,7 +269,9 @@ body {
     }
 
     .banner {
-        height: 480px;
+        /* height: 480px;
+         */
+         height: 100vh;
         width: 100%;
         margin: 0px;
         display: flex;
@@ -323,7 +325,8 @@ body {
     }
 
     .banner {
-        height: 480px;
+        /* height: 480px; */
+        height: 100vh;
         /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
