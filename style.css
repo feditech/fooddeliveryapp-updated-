@@ -266,7 +266,6 @@ body {
 @media only screen and (max-width: 500px) {
     .navbar {
         padding-top: 0;
-        height: 65px;
     }
 
     .banner {
@@ -287,6 +286,7 @@ body {
     .bannerdescription p {
         padding: 0;
         margin: 0;
+        font-size: x-small;
     }
 
     /* .bannerimage{
@@ -318,7 +318,6 @@ body {
 @media only screen and (max-width: 380px) {
     .navbar {
         padding-top: 0;
-        height: 65px;
     }
 
     .banner {
